@@ -10,19 +10,13 @@ import sampleFishes from '../sample-fishes.js';
 import base from '../base';
 
 class App extends React.Component {
-    constructor(...args) {
-        super(...args);
+    static propTypes = {
+      params: React.PropTypes.object
+    }
 
-        this.addFish = this.addFish.bind(this);
-        this.updateFish = this.updateFish.bind(this);
-        this.removeFish = this.removeFish.bind(this);
-        this.loadSamples = this.loadSamples.bind(this);
-        this.addToOrder = this.addToOrder.bind(this);
-        // initial state
-        this.state = {
-            fishes: {},
-            order: {}
-        };
+    state = {
+      fishes: {},
+      order: {},
     }
 
     componentWillMount() {
@@ -125,7 +119,4 @@ class App extends React.Component {
     }
 }
 
-App.propTypes = {
-  params: React.PropTypes.object
-}
 export default App;
